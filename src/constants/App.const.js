@@ -5,5 +5,6 @@ export const AppConst = {
     SCORE: "Score",
     DEFAULT_SCORE: 0,
     WIN_THE_BALL: "Win the ball",
-    POINTS: [0,15,30,40]
+    POINTS: [0,15,30,40],
+    WON_THE_GAME: "won the game"
 };

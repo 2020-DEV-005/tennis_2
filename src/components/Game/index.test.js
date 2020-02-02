@@ -55,4 +55,14 @@ describe("<Game /> component", () => {
         player1WinButton.simulate("click");
         expect(wrapper.find(".player-1 .score").text()).toEqual(AppConst.POINTS[3].toString());
     });
+
+    it("Player should win if his score is 40 and win the ball", () => {
+        let player1WinButton = wrapper.find("div.player-1 button");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        expect(wrapper.find(".game-over").text()).toEqual(AppConst.PLAYER_1 + " " + AppConst.WON_THE_GAME);
+    });
+
 });
