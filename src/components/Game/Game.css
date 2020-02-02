@@ -1,0 +1,17 @@
+.game{
+    display: flex;
+    padding: 2rem;
+}
+.player{
+    width: 50%;
+    border-right: 1px solid #cccccc;
+    text-align: right;
+}
+.player:last-child{
+    border-right: none;
+    border-left: 1px solid #cccccc;
+    text-align: left;
+}
+.player h4{
+    margin: 0 1rem; 
+}
