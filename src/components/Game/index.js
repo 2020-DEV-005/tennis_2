@@ -8,15 +8,17 @@ class Game extends React.Component {
         this.state = {
             player1_score: AppConst.POINTS[0],
             player2_score: AppConst.POINTS[0]
-        }
+        };
+        this.player1_wins = 0;
+        this.player2_wins = 0;
     }
 
     _updateScore = (ballWinner) => {
         let scoreObj = {};
         if(ballWinner === AppConst.PLAYER_1){
-            scoreObj.player1_score =  AppConst.POINTS[1];
+            scoreObj.player1_score =  AppConst.POINTS[++this.player1_wins];
         }else{
-            scoreObj.player2_score =  AppConst.POINTS[1];
+            scoreObj.player2_score =  AppConst.POINTS[++this.player2_wins];
         }
         this.setState(scoreObj);
     }

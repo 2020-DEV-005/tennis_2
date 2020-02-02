@@ -4,7 +4,13 @@ import Game from './';
 import {AppConst} from '../../constants/App.const';
 
 describe("<Game /> component", () => {
-    let wrapper = shallow(<Game />);
+
+    let wrapper;
+
+    beforeEach(() => {
+        wrapper = shallow(<Game />);
+    });
+
     it("Should have label for each player", () => {
         let playerList = wrapper.find("div.player h4");
         expect(playerList.length).toEqual(2);
@@ -35,4 +41,11 @@ describe("<Game /> component", () => {
 
     });
     
+    it("The player score should be 30, if the player Win the ball twice", () => {
+        let player1WinButton = wrapper.find("div.player-1 button");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        expect(wrapper.find(".player-1 .score").text()).toEqual(AppConst.POINTS[2].toString());
+
+    });
 });
