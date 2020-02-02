@@ -65,4 +65,16 @@ describe("<Game /> component", () => {
         expect(wrapper.find(".game-over").text()).toEqual(AppConst.PLAYER_1 + " " + AppConst.WON_THE_GAME);
     });
 
+    it("Win the ball buttons should be disabled after the game is over", () => {
+        let player1WinButton = wrapper.find("div.player-1 button");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        
+        let buttons = wrapper.find("div.player button");
+        expect(buttons.at(0).is('[disabled]')).toBeTruthy();
+        expect(buttons.at(1).is('[disabled]')).toBeTruthy();
+    });
+
 });

@@ -48,12 +48,12 @@ class Game extends React.Component {
                     <div className="player player-1">
                         <h4>{AppConst.PLAYER_1}</h4>
                         <div className="score-container">{AppConst.SCORE} : <span className="score">{this.state.player1.score}</span></div>
-                        <button onClick={this._updateScore.bind(this, AppConst.PLAYER1, AppConst.PLAYER2)}>{AppConst.WIN_THE_BALL}</button>
+                        <button onClick={this._updateScore.bind(this, AppConst.PLAYER1, AppConst.PLAYER2)} disabled={this.state.gameOver}>{AppConst.WIN_THE_BALL}</button>
                     </div>
                     <div className="player player-2">
                         <h4>{AppConst.PLAYER_2}</h4>
                         <div className="score-container">{AppConst.SCORE} : <span className="score">{this.state.player2.score}</span></div>
-                        <button onClick={this._updateScore.bind(this, AppConst.PLAYER2, AppConst.PLAYER1)}>{AppConst.WIN_THE_BALL}</button>
+                        <button onClick={this._updateScore.bind(this, AppConst.PLAYER2, AppConst.PLAYER1)} disabled={this.state.gameOver}>{AppConst.WIN_THE_BALL}</button>
                     </div>
                 </div>
                 {this.state.gameOver && <div className="game-over">{this.state.winner} {AppConst.WON_THE_GAME}</div>}
