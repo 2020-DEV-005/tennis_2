@@ -11,4 +11,11 @@ describe("<Game /> component", () => {
         expect(playerList.at(0).text()).toEqual(AppConst.PLAYER_1);
         expect(playerList.at(1).text()).toEqual(AppConst.PLAYER_2);
     });
+
+    it("The default score should be 0 for both the players", () => {
+        let scoreList = wrapper.find("div.player .score");
+        expect(scoreList.at(0).text()).toEqual("0");
+        expect(scoreList.at(1).text()).toEqual("0");
+    });
+    
 });
