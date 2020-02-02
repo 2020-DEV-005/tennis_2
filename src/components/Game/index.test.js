@@ -23,5 +23,16 @@ describe("<Game /> component", () => {
         expect(buttons.length).toEqual(2);
         expect(buttons.at(0).text()).toEqual(AppConst.WIN_THE_BALL);
     });
+
+    it("The score should be updated from 0 to 15 for the player, clicking upon Win the ball button", () => {
+        let player1WinButton = wrapper.find("div.player-1 button");
+        player1WinButton.simulate("click");
+        expect(wrapper.find(".player-1 .score").text()).toEqual(AppConst.POINTS[1].toString());
+
+        let player2WinButton = wrapper.find("div.player-2 button");
+        player2WinButton.simulate("click");
+        expect(wrapper.find(".player-2 .score").text()).toEqual(AppConst.POINTS[1].toString());
+
+    });
     
 });
