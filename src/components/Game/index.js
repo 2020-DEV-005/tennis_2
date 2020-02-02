@@ -34,6 +34,8 @@ class Game extends React.Component {
             if(ballWinnerObj.score === AppConst.DEUCE &&  otherPlayerObj.score === AppConst.DEUCE) {
                 ballWinnerObj.score = AppConst.ADVANTAGE;
                 otherPlayerObj.score = AppConst.POINTS[AppConst.POINTS.length-1];
+            } else if(ballWinnerObj.score === AppConst.POINTS[AppConst.POINTS.length-1] && otherPlayerObj.score === AppConst.ADVANTAGE) {
+                ballWinnerObj.score = otherPlayerObj.score = AppConst.DEUCE;
             } else {
                 otherProps = {
                     winner: ballWinner === AppConst.PLAYER1 ? AppConst.PLAYER_1 : AppConst.PLAYER_2,
