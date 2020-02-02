@@ -17,10 +17,12 @@ class Game extends React.Component {
                 <div className="player">
                     <h4>{AppConst.PLAYER_1}</h4>
                     <div className="score-container">{AppConst.SCORE} : <span className="score">{this.state.player1_score}</span></div>
+                    <button>{AppConst.WIN_THE_BALL}</button>
                 </div>
                 <div className="player">
                     <h4>{AppConst.PLAYER_2}</h4>
                     <div className="score-container">{AppConst.SCORE} : <span className="score">{this.state.player2_score}</span></div>
+                    <button>{AppConst.WIN_THE_BALL}</button>
                 </div>
             </div>
         );

@@ -17,5 +17,11 @@ describe("<Game /> component", () => {
         expect(scoreList.at(0).text()).toEqual("0");
         expect(scoreList.at(1).text()).toEqual("0");
     });
+
+    it("Should have 'Win the ball' button for each player", () => {
+        let buttons = wrapper.find("div.player button");
+        expect(buttons.length).toEqual(2);
+        expect(buttons.at(0).text()).toEqual(AppConst.WIN_THE_BALL);
+    });
     
 });
