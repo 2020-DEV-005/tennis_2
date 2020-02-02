@@ -92,5 +92,21 @@ describe("<Game /> component", () => {
         expect(wrapper.find(".player-2 .score").text()).toEqual(AppConst.DEUCE);
     });
 
+    it("The Player 1 score should be Advantage and player 2 score should be 40, if both the players are deuce and Player 1 won the ball", () => {
+        let player1WinButton = wrapper.find("div.player-1 button");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+        player1WinButton.simulate("click");
+
+        let player2WinButton = wrapper.find("div.player-2 button");
+        player2WinButton.simulate("click");
+        player2WinButton.simulate("click");
+        player2WinButton.simulate("click");
+        
+        player1WinButton.simulate("click");
+        expect(wrapper.find(".player-1 .score").text()).toEqual(AppConst.ADVANTAGE);
+        expect(wrapper.find(".player-2 .score").text()).toEqual(AppConst.POINTS[3].toString());       
+
+    });
 
 });

@@ -9,5 +9,6 @@ export const AppConst = {
     WON_THE_GAME: "won the game",
     PLAYER1: "player1",
     PLAYER2: "player2",
-    DEUCE: "Deuce"
+    DEUCE: "Deuce",
+    ADVANTAGE: "A"
 };
